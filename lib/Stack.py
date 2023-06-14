@@ -37,7 +37,8 @@ class Stack:
     
 
     def search(self, target):
-        for i in reversed(range(len(self.items))):
-            if self.items[i] == target:
-                return len(self.items) -1 
-            return -1 
+        if target in self.items:
+            return len(self.items)-self.items.index(target) - 1
+        else:
+            print("How far is the element in the stack?")
+            return None
